@@ -46,7 +46,7 @@ static double CCC(int[][] a){
 		int c=0;
 		
 		for(int j=0;j<k;j++){for(int m=j+1;m<k;m++){c=c+a[b[j]][b[m]];}}
-		{System.out.print("\n"+c);}
+	//	{System.out.print("\n"+c);}
 		double d=(2.0*c/k/(k-1.0));//{System.out.print("\n"+i+" "+d);}
 		cc1=cc1+(d);
 	}

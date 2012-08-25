@@ -24,7 +24,7 @@ public class centrality1 extends TriadColor {
     	String[] st = new String[1490];
 		int[][] g=new int[1490][1490];
 		int m=0;
-		File f=new File("out.txt");
+		File f=new File("asd.txt");
 		
 		try {int n=0;
 			Scanner s=new Scanner(f);
@@ -115,7 +115,7 @@ public class centrality1 extends TriadColor {
     	}
     	}*/
     	//for(int i=0;i<80;i++){System.out.println(TKT(g,st)[x[i]]);}
-    	for(int ee=0;ee<=100;ee++){click(R,P1,X,ee);}
+    	for(int ee=0;ee<=20000;ee++){click(R,P1,X,ee);}
     }
     
     public static void FindCentrality(int[][] a){
@@ -305,7 +305,37 @@ public class centrality1 extends TriadColor {
     	  //C=processed nodes i.e. all maximal cliques through them have been reported
     	  //INVARIANT-all nodes connected to every node of A are either in B or C
     	  if(B.isEmpty()&&C.isEmpty()){
-    		  if(A.size()>=8/*&&!A.contains((Integer)8)&&!A.contains((Integer)3)*/)	{
+    		  if(A.size()==5&&!A.contains((Integer)54)&&!A.contains((Integer)71)&&!A.contains((Integer)98)&&
+    				  !A.contains((Integer)117)&&!A.contains((Integer)149)&&!A.contains((Integer)154)&&
+    				  !A.contains((Integer)179)&&!A.contains((Integer)188)&&!A.contains((Integer)201)&&
+    				  !A.contains((Integer)362)&&!A.contains((Integer)404)&&!A.contains((Integer)453)&&
+    				  !A.contains((Integer)459)&&!A.contains((Integer)492)&&!A.contains((Integer)511)&&
+    				  !A.contains((Integer)565)&&!A.contains((Integer)489)&&!A.contains((Integer)761)&&!A.contains((Integer)823)&&
+    				  !A.contains((Integer)825)&&!A.contains((Integer)879)&&!A.contains((Integer)1040)&&
+    				  !A.contains((Integer)1050)&&!A.contains((Integer)1208)&&!A.contains((Integer)1244)&&
+    				  !A.contains((Integer)1316)&&!A.contains((Integer)39)&&!A.contains((Integer)86)&&
+    				  !A.contains((Integer)180)&&!A.contains((Integer)223)&&!A.contains((Integer)263)&&
+    				  !A.contains((Integer)277)&&!A.contains((Integer)392)&&!A.contains((Integer)636)&&
+    				  !A.contains((Integer)854)&&!A.contains((Integer)877)&&!A.contains((Integer)891)&&
+    				  !A.contains((Integer)962)&&!A.contains((Integer)1100)&&!A.contains((Integer)1134)&&
+    				  !A.contains((Integer)1286)&&!A.contains((Integer)20)&&!A.contains((Integer)217)&&
+    				  !A.contains((Integer)300)&&
+    				  !A.contains((Integer)322)&&!A.contains((Integer)416)&&!A.contains((Integer)467)&&
+    				  !A.contains((Integer)573)&&
+    				  !A.contains((Integer)118)&&!A.contains((Integer)755)&&!A.contains((Integer)934)&&
+    				  !A.contains((Integer)935)&&!A.contains((Integer)966)&&!A.contains((Integer)1062)&&
+    				  !A.contains((Integer)1151)&&
+    				  !A.contains((Integer)834)&&!A.contains((Integer)855)&&!A.contains((Integer)899)&&
+    				  !A.contains((Integer)918)&&!A.contains((Integer)1068)&&!A.contains((Integer)1152)&&
+    				  !A.contains((Integer)1305)&&
+    				  !A.contains((Integer)99)&&!A.contains((Integer)113)&&!A.contains((Integer)386)&&
+    				  !A.contains((Integer)433)&&!A.contains((Integer)479)&&!A.contains((Integer)523)&&
+    				  !A.contains((Integer)1039)&&!A.contains((Integer)1111)&&!A.contains((Integer)1120)&&
+    				  !A.contains((Integer)1163)&&!A.contains((Integer)1190)&&!A.contains((Integer)1319)&&
+    				  !A.contains((Integer)780)&&!A.contains((Integer)1160)&&!A.contains((Integer)1324)&&
+    				  !A.contains((Integer)1329)&&!A.contains((Integer)1462)&&!A.contains((Integer)1477)&&
+    				  !A.contains((Integer)248)&&!A.contains((Integer)763)&&!A.contains((Integer)792)&&
+    				  !A.contains((Integer)921)&&!A.contains((Integer)949)&&!A.contains((Integer)1171))	{
     			//  ca=A.size();
     		  System.out.println(""+A);
     		  		}

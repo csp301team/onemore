@@ -2,7 +2,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.LinkedList; 
   
 public class centrality {
     
@@ -13,10 +12,10 @@ public class centrality {
     private static Double [] bC;//betweenness centrality
     
     public static void main(String[] args){
-    	
+    	/*
     	String[] st = new String[105];
-		int[][] g=new int[105][105];
-		int m=0;
+		//int[][] g=new int[105][105];
+		int m=0;//##########################DEGREE OF POLARISATION
 		File f=new File("pol.txt");
 		
 		try {int n=0;
@@ -27,50 +26,86 @@ public class centrality {
 				while(!t.equals("value")){ t=s.next();}	
 				st[n++]=s.next().substring(1, 2);
 			}
-			 n=0;
-			
+			 
+			/*n=0;
 			while(n++<=440)
 			{
 				s.next();s.next();s.next(); s.next();
 				int a=Integer.parseInt(s.next());s.next();
 				int b=Integer.parseInt(s.next());
 				if(st[a].equals(st[b])){m++;}
-				g[a][b]=1;
-				g[b][a]=1;
+				//g[a][b]=1;
+				//g[b][a]=1;
 				
 			}
 			
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
-		}
+		}*/
+		int[][][] g=new int[60][105][105];
+		for (int i=0;i<60;i++){
+			
 		
-    	FindCentrality(g);
+	File f=new File("r"+i+".txt");
+
+	try {
+	Scanner s=new Scanner(f);
+	for(int n=1;n<=441;n++)
+	{s.next();
+	int b=Integer.parseInt(s.next());
+	int c=Integer.parseInt(s.next());
+
+	g[i][b][c]=1;
+	g[i][c][b]=1;
+	s.next();
+	//System.out.println(b+" "+c);//System.out.println(c);
+	}} catch (FileNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	}}
+		for(int i=0;i<60;i++){
+			FindCentrality(g[i]);
+			double[] o=new double[105];
+			double maxbc=0.0,bc=0.0;
+	    	for(int q=0;q<105;q++){if(o[q]>maxbc){maxbc=o[q];}bc=bc+o[q];}
+	    	bc=maxbc-bc/104;
+	    	System.out.println(bc);
+		}
+    	
     	double[] l=new double[105];
+    	double lmax=0.0, lavg=0.0;
     	for(int q=0;q<105;q++){
-    		l[q]=NCC(q); //System.out.println(""+q+" "+l[q]);
-    	}
+    		l[q]=NCC(q); 
+    		lmax=(lmax>l[q])?lmax:l[q];lavg=lavg+l[q];
+    		//System.out.println(""+q+" "+l[q]);
+    	}lavg=lavg/105;
+    	
     	double[] o=new double[105];
+    	double omax=0, oavg=0;
     	for(int q=0;q<105;q++){
-    		o[q]=NBC(q); //System.out.println(""+q+" "+o[q]);
-    	}
+    		o[q]=NBC(q); omax=(omax>o[q])?omax:o[q];oavg=oavg+o[q];//System.out.println(""+q+" "+o[q]);
+    	}oavg=oavg/105;
+    	
     	double[] p=new double[105];
+    	double pmax=0, pavg=0;
     	for(int q=0;q<105;q++){
-    		p[q]=NPC(q,g);// System.out.println(""+q+" "+p[q]);
-    	}
+    	//	p[q]=NPC(q,g[i]);pmax=(pmax>p[q])?pmax:p[q];pavg=pavg+p[q];// System.out.println(""+q+" "+p[q]);
+    	}pavg=pavg/105;
+    	
     	//Degree Centralization=SIGMA(max_deg-deg)/(n-1)
     	double maxdeg=0.0,dc=0.0;
     	for(int i=0;i<105;i++){if(p[i]>maxdeg){maxdeg=p[i];}dc=dc+p[i];}
     	dc=maxdeg-dc/104;//0.163
-    	System.out.println(""+dc);
+    	//System.out.println(""+dc);
     	double maxbc=0.0,bc=0.0;
     	for(int i=0;i<105;i++){if(o[i]>maxbc){maxbc=o[i];}bc=bc+o[i];}
     	bc=maxbc-bc/104;//0.120
-    	System.out.println(""+bc);
+    	//System.out.println(""+bc);
     	double maxcc=0.0,cc=0.0;
     	for(int i=0;i<105;i++){if(l[i]>maxcc){maxcc=l[i];}cc=cc+l[i];}
     	cc=(maxcc-cc/104)*207/103;
-    	System.out.println(""+cc);//0.172
+    	//System.out.println(""+cc);//0.172
     	
     }
     
