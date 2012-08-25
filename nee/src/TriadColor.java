@@ -37,11 +37,11 @@ public class TriadColor {
 		for(int i=0;i<105;i++){System.out.println(TDT(g,st)[i]);}
 	}
 static int[] TKT(int[][] a, String[] s){//Three-of-a-Kind Triads
-	int[] c=new int[105];
+	int[] c=new int[1490];
 	int n=a.length;
-	for(int i=0;i<105;i++)
-	{	int [] b=new int[30];//For polbooks max degree<30
-		int k=0; for(int j=0;j<105 ;j++){if(a[i][j]==1){b[k++]=j;}}//k=degree of i
+	for(int i=0;i<1490;i++)
+	{	int [] b=new int[470];//For polbooks max degree<30
+		int k=0; for(int j=0;j<1490 ;j++){if(a[i][j]==1){b[k++]=j;}}//k=degree of i
 		int p=0;
 		for(int j=0;j<k;j++){for(int m=j+1;m<k;m++){
 			if(a[b[j]][b[m]]==1){if(s[i].equals(s[b[j]])&&s[i].equals(s[b[m]])){p++;
